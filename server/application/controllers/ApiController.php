@@ -15,7 +15,7 @@ class ApiController extends My_Controller_Action
 
     }
     
-    public function getNextQustionAction(){
+    public function getNextQuestionAction(){
     	Zend_Layout::getMvcInstance()->disableLayout();
     	$questionTable = new Model_DbTable_Questions();
     	$answerTable = new Model_DbTable_Answers();
