@@ -1,6 +1,6 @@
 <?php
 
-class ApiController extends My_Controller_Action
+class ApiController extends My_Controller_Api
 {
 
     public function init()
@@ -29,8 +29,8 @@ class ApiController extends My_Controller_Action
     		$theAnswer["correct"] = $answer->is_correct;
     		$data["answers"][] = $theAnswer;
     	}
-    	
-    	echo Zend_Json::encode($data);
+    	$this->_response->setHeader("Content-Type", "text/json");
+    	$this->_response->setBody(Zend_Json::encode($data));
     	
     }
 
