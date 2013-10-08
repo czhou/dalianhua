@@ -29,12 +29,12 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:[NSString stringWithFormat:@"%@%@", API_URL, API_FUNC_QUESTION] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        //NSLog(@"JSON: %@", responseObject);
+        NSLog(@"JSON: %@", responseObject);
         Question *next = [[Question alloc] initWithJSON:responseObject];
         block(next, nil);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        //NSLog(@"Error: %@", error);
+        NSLog(@"Error: %@", error);
         block(nil, error);
     }];
     

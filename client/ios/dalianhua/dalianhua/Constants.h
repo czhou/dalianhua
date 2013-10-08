@@ -13,9 +13,9 @@
 #define TESTFLIGHT_TOKEN @"88ea000c-5665-4222-b342-d1a35459aa41"
 
 //API相关
-#define API_URL @"http://0.0.0.0:90/"
-//#define API_URL @"http://dalianhua.com/api/"
-#define API_FUNC_QUESTION @"question"
+#define API_URL @"http://dalianhua.uiu.cc/api/"
+//#define API_URL @"http://dalianhua.com/"
+#define API_FUNC_QUESTION @"get-next-question"
 #define API_FUNC_ANSWER @"answer"
 
 
