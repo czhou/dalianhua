@@ -26,7 +26,7 @@ class ApiController extends My_Controller_Api
     	$data["audio"] = "http://dalianhua.uiu.cc" . $question->audio;
     	foreach ($answers as $answer){
     		$theAnswer["content"] = $answer->option_content;
-    		$theAnswer["correct"] = $answer->is_correct;
+    		$theAnswer["correct"] = $answer->is_correct?true:false;
     		$data["answers"][] = $theAnswer;
     	}
     	$this->_response->setHeader("Content-Type", "text/json");
