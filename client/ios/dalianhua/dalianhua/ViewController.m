@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Question.h"
+#import "MBProgressHUD.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"大连话准备中";
     
     for (int i=0; i<5; i++) {
         NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject: skipButton];
@@ -31,8 +35,11 @@
 	
     
     [Question next:^(Question *question, NSError *error) {
+        
         self.current = question;
         [self render];
+        
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }];
     
 }
@@ -62,13 +69,38 @@
 }
 
 - (void)tapAnswer:(id)sender {
-    
+    int tag = ((UIView *)sender).tag;
+    int idx = tag - 1000;   //TODO 这个1000要define一下
+
+    NSDictionary *answer = [self.current.answers objectAtIndex:idx];
+    if (answer) {
+        BOOL correct = [[answer objectForKey:@"correct"] boolValue];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [hud setMinShowTime:1];
+        if (correct) {
+            hud.labelText = @"答对了，下一题准备中";
+            [self.current correct];
+            [self nextQuestion];
+        }else {
+            [hud setMode:MBProgressHUDModeText];
+            hud.labelText = @"错了";
+            [hud hide:YES];
+        }
+    }
 }
 
 - (IBAction)tapSkip:(id)sender {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"下一题准备中";
+    [self nextQuestion];
+}
+
+- (void)nextQuestion {
     [Question next:^(Question *question, NSError *error) {
         self.current = question;
         [self render];
+        
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }];
 }
 

@@ -52,6 +52,7 @@
 		CEA748F21802804F002C9123 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA748F11802804F002C9123 /* Answer.m */; };
 		CEA748F31802804F002C9123 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA748F11802804F002C9123 /* Answer.m */; };
 		CEA748FA1803F0DE002C9123 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA748F91803F0DE002C9123 /* MediaPlayer.framework */; };
+		CEA748FE1803F29C002C9123 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA748FD1803F29C002C9123 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		CEA748F01802804F002C9123 /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Answer.h; path = models/Answer.h; sourceTree = "<group>"; };
 		CEA748F11802804F002C9123 /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Answer.m; path = models/Answer.m; sourceTree = "<group>"; };
 		CEA748F91803F0DE002C9123 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		CEA748FC1803F29C002C9123 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		CEA748FD1803F29C002C9123 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +233,7 @@
 		CEA748B418027CD6002C9123 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				CEA748FB1803F29C002C9123 /* MBProgressHUD */,
 				CEA748B518027CD6002C9123 /* AFNetworking */,
 				CEA748C918027CD6002C9123 /* TestFlightSDK2 */,
 			);
@@ -284,6 +288,15 @@
 				CEA748F11802804F002C9123 /* Answer.m */,
 			);
 			name = models;
+			sourceTree = "<group>";
+		};
+		CEA748FB1803F29C002C9123 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CEA748FC1803F29C002C9123 /* MBProgressHUD.h */,
+				CEA748FD1803F29C002C9123 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +415,7 @@
 				CEA748D218027CD6002C9123 /* AFHTTPRequestOperationManager.m in Sources */,
 				CEA748D618027CD6002C9123 /* AFNetworkReachabilityManager.m in Sources */,
 				CEA748DE18027CD6002C9123 /* AFURLResponseSerialization.m in Sources */,
+				CEA748FE1803F29C002C9123 /* MBProgressHUD.m in Sources */,
 				CEA748DA18027CD6002C9123 /* AFURLConnectionOperation.m in Sources */,
 				CEA748D818027CD6002C9123 /* AFSecurityPolicy.m in Sources */,
 				CEA748D418027CD6002C9123 /* AFHTTPSessionManager.m in Sources */,

@@ -24,5 +24,6 @@
 - (IBAction)tapPlay:(id)sender;
 - (void)tapAnswer:(id)sender;
 - (IBAction)tapSkip:(id)sender;
+- (void)nextQuestion;
 
 @end
