@@ -42,7 +42,7 @@ class ApiController extends My_Controller_Api
     }
     
     public function answerAction(){
-    	$this->sendResponse();
+    	$this->sendResponse(null);
     	 
     }
 
