@@ -33,6 +33,13 @@ class ApiController extends My_Controller_Api
     	$this->_response->setBody(Zend_Json::encode($data));
     	
     }
+    
+    public function answerAction(){
+    	Zend_Layout::getMvcInstance()->disableLayout();
+    	$this->_response->setHeader("Content-Type", "text/json");
+    	$this->_response->setHttpResponseCode(200);
+    	 
+    }
 
 
 }
