@@ -3,20 +3,28 @@
 class ApiController extends My_Controller_Api
 {
 
-    public function init()
-    {
+    public function init(){
     	parent::init();
+    	$bootstrap = $this->getInvokeArg('bootstrap');
+    	$this->_helper->layout->disableLayout();
+    	$this->_helper->viewRenderer->setNoRender(TRUE);
+    }
+    
+    private function sendResponse($content){
+    	$this->getResponse()
+    	->setHeader('Content-Type', 'text/json')
+    	->setBody($content)
+    	->sendResponse();
+    	exit;
     }
 
 
-    public function indexAction()
-    {
+    public function indexAction(){
     	
 
     }
     
     public function getNextQuestionAction(){
-    	Zend_Layout::getMvcInstance()->disableLayout();
     	$questionTable = new Model_DbTable_Questions();
     	$answerTable = new Model_DbTable_Answers();
     	$question = $questionTable->fetchRow("id = 2");
@@ -29,15 +37,12 @@ class ApiController extends My_Controller_Api
     		$theAnswer["correct"] = $answer->is_correct?true:false;
     		$data["answers"][] = $theAnswer;
     	}
-    	$this->_response->setHeader("Content-Type", "text/json");
-    	$this->_response->setBody(Zend_Json::encode($data));
+    	$this->sendResponse(Zend_Json::encode($data));
     	
     }
     
     public function answerAction(){
-    	Zend_Layout::getMvcInstance()->disableLayout();
-    	$this->_response->setHeader("Content-Type", "text/json");
-    	$this->_response->setHttpResponseCode(200);
+    	$this->sendResponse();
     	 
     }
 
