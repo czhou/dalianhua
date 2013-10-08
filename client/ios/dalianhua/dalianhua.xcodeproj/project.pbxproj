@@ -51,6 +51,7 @@
 		CEA748EE18027EBC002C9123 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA748EC18027EBC002C9123 /* Question.m */; };
 		CEA748F21802804F002C9123 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA748F11802804F002C9123 /* Answer.m */; };
 		CEA748F31802804F002C9123 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA748F11802804F002C9123 /* Answer.m */; };
+		CEA748FA1803F0DE002C9123 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA748F91803F0DE002C9123 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		CEA748EC18027EBC002C9123 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Question.m; path = models/Question.m; sourceTree = "<group>"; };
 		CEA748F01802804F002C9123 /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Answer.h; path = models/Answer.h; sourceTree = "<group>"; };
 		CEA748F11802804F002C9123 /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Answer.m; path = models/Answer.m; sourceTree = "<group>"; };
+		CEA748F91803F0DE002C9123 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA748FA1803F0DE002C9123 /* MediaPlayer.framework in Frameworks */,
 				CEA748EA18027DB8002C9123 /* libz.dylib in Frameworks */,
 				CEA748E218027CD6002C9123 /* libTestFlight.a in Frameworks */,
 				CEA74880180276C0002C9123 /* CoreGraphics.framework in Frameworks */,
@@ -167,6 +170,7 @@
 		CEA7487C180276C0002C9123 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEA748F91803F0DE002C9123 /* MediaPlayer.framework */,
 				CEA748E918027DB8002C9123 /* libz.dylib */,
 				CEA748B218027729002C9123 /* GameKit.framework */,
 				CEA7487D180276C0002C9123 /* Foundation.framework */,
@@ -650,6 +654,7 @@
 				CEA748AE180276C1002C9123 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEA748AF180276C1002C9123 /* Build configuration list for PBXNativeTarget "dalianhuaTests" */ = {
 			isa = XCConfigurationList;
@@ -658,6 +663,7 @@
 				CEA748B1180276C1002C9123 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
