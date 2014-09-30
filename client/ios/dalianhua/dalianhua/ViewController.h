@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @class Question;
 
@@ -14,6 +15,7 @@
     IBOutlet UITextView *textView;
     IBOutlet UIButton *speakerButton;
     IBOutlet UIButton *skipButton;
+    MPMoviePlayerController *_speaker;
 }
 
 @property (nonatomic, strong) Question *current;
@@ -22,5 +24,6 @@
 - (IBAction)tapPlay:(id)sender;
 - (void)tapAnswer:(id)sender;
 - (IBAction)tapSkip:(id)sender;
+- (void)nextQuestion;
 
 @end

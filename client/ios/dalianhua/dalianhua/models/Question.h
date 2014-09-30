@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSArray *answers;
 
 - (id)initWithJSON:(NSDictionary *)json;
+- (void)correct;
 + (void)next:(void (^)(Question *question, NSError *error))block;
 
 @end

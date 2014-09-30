@@ -40,4 +40,18 @@
     
 }
 
+- (void)correct {
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *p = @{@"question_id":self.question_id};
+    [manager POST:[NSString stringWithFormat:@"%@%@", API_URL, API_FUNC_ANSWER] parameters:p success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"JSON: %@", responseObject);
+
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
 @end
