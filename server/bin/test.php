@@ -107,7 +107,9 @@ for($i = 1; $i <= $voteNum; $i++){
         continue;
     }
 
-    sleep(rand(50, 200));
+    $slot = rand(5, 80);
+    echo "-------->> $slot 秒后开始投下一票\n";
+    sleep($slot);
 }
 echo "failed $error_count \n";
 
