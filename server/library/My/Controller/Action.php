@@ -28,8 +28,12 @@ class My_Controller_Action extends Zend_Controller_Action {
 
 	public function init() {
 		$this->logger = Zend_Registry::get("logger");
-		
+		require_once 'My/Auth/Admin.php';
+		$this->admin = My_Auth_Admin::getInstance();
+		require_once 'My/Auth/Customer.php';
+		$this->auth = My_Auth_Customer::getInstance();
 
+		$this->view->currentUser = $this->auth->getIdentity ();
 		$this->view->logger = $this->logger;
 
 		$this->config = Zend_Registry::get("config");
