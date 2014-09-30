@@ -32,7 +32,7 @@ $application = new Zend_Application(
 
 $application->bootstrap();
 
-$voteNum = 3;
+$voteNum = 583;
 $error_count = 0;
 
 for($i = 1; $i <= $voteNum; $i++){
@@ -106,6 +106,8 @@ for($i = 1; $i <= $voteNum; $i++){
         echo $message . "\tEXCEPTION: " . $e->getMessage();
         continue;
     }
+
+    sleep(rand(50, 200));
 }
 echo "failed $error_count \n";
 
